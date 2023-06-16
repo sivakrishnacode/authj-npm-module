@@ -1,0 +1,17 @@
+{
+  "name": "authj",
+  "version": "1.2.0",
+  "description": "authentication using JWT",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sivakrishnacode/authj.git"
+  },
+  "author": "sivakrishna <sivakrishnacoc@gmail.com>",
+  "license": "ISC"
+  
+}
