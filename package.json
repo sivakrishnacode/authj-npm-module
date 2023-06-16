@@ -1,6 +1,6 @@
 {
   "name": "authj",
-  "version": "1.8.0",
+  "version": "2.0.0",
   "description": "authentication using JWT",
   "main": "index.js",
   "type": "module",

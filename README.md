@@ -17,7 +17,9 @@ npm i authj
 ```python
 const useAuthj = require('authj')
 
-const authj = useAuthj('secret-key')
+const authj = useAuthj()
+
+authj.config('secret-key')
 
 # For sign the key
 authj. signToken({ username: "username", password: "password",userDetails: {}, isAuth: false })
