@@ -3,6 +3,15 @@ import jwt from "jsonwebtoken";
 dotenv.config()
 
 
+  function config(key){
+      if(!key || key == '' || key == null ){
+        return  new Error('secret-key not valid or not found') 
+      }else{
+        process.env.MYSECRETKET=key
+        return 'secret-key saved succesfully'
+      }
+  }
+
   function signToken(prop={username :null, password: null , userDetails : null, isAuth: false}) {
     return new Promise((resolve, reject) => {
 
@@ -69,13 +78,14 @@ dotenv.config()
 
 
   
-export default  (key) => {
-  process.env.MYSECRETKET=key
+export default  () => {
+ 
 
   return{
     signToken,
     checkToken,
-    getTokenInfo
+    getTokenInfo,
+    config
   }
  
 }

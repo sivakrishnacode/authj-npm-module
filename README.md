@@ -14,10 +14,10 @@ npm i authj
 
 ## Usage
 
-```javascript
+```python
 const useAuthj = require('authj')
 
-const authj = useAuthj()
+const authj = useAuthj('secret-key')
 
 # For sign the key
 authj. signToken({ username: "username", password: "password",userDetails: {}, isAuth: false })
@@ -61,3 +61,4 @@ Please make sure to update tests as appropriate.
 
 ## Author
 Sivakrishna [sivakrishnacoc@gmail.com](mailto:sivakrishnacoc@gmail.com)
+
