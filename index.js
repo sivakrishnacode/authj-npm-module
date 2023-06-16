@@ -3,10 +3,6 @@ import jwt from "jsonwebtoken";
 dotenv.config()
 
 
-
-  const TOKEN_SECRET = 'siva' ;
-  const REFRESH_SECRET = 'sivaa'
-
   function signToken(prop={username :null, password: null , userDetails : null, isAuth: false}) {
     return new Promise((resolve, reject) => {
 
@@ -23,7 +19,7 @@ dotenv.config()
       })
     }
 
-      jwt.sign(prop, TOKEN_SECRET, { expiresIn: '100' }, (error, token) => {
+      jwt.sign(prop, process.env.MYSECRETKET, { expiresIn: '100' }, (error, token) => {
         if (error) {
           reject(error);
         } else {
@@ -33,10 +29,6 @@ dotenv.config()
       });
     });
   }
-
-
-
-
 
   function checkToken(prop = { token: null}) {
 
@@ -49,7 +41,7 @@ dotenv.config()
         })
       } 
 
-      jwt.verify(prop.token, TOKEN_SECRET, (error, data) => {
+      jwt.verify(prop.token, process.env.MYSECRETKET, (error, data) => {
         if (error) {
           reject(error);
         } else {
@@ -77,11 +69,13 @@ dotenv.config()
 
 
   
-export default  () => {
+export default  (key) => {
+  process.env.MYSECRETKET=key
+
   return{
-     signToken,
-  checkToken,
-  getTokenInfo
+    signToken,
+    checkToken,
+    getTokenInfo
   }
  
 }
