@@ -28,7 +28,7 @@ dotenv.config()
       })
     }
 
-      jwt.sign(prop, process.env.MYSECRETKET, { expiresIn: '100' }, (error, token) => {
+      jwt.sign(prop, process.env.MYSECRETKET, (error, token) => {
         if (error) {
           reject(error);
         } else {
