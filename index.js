@@ -79,14 +79,11 @@ dotenv.config()
 
   
 export default  () => {
- 
-
   return{
     signToken,
     checkToken,
     getTokenInfo,
     config
   }
- 
 }
  
